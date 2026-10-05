@@ -1,0 +1,113 @@
+/* 1. Colours as variables */
+:root {
+  --bg: #f4f6f8;
+  --text: #222222;
+  --card: #ffffff;
+  --border: #cccccc;
+  --accent: #0b7a75;
+  --accent-hover: #095c58;
+  --button-text: #ffffff;
+  --warning: #d97706;
+  --danger: #c62828;
+}
+
+/* 2. Dark theme: only redefine the variables */
+body.dark {
+  --bg: #121820;
+  --text: #e8eaed;
+  --card: #1d2631;
+  --border: #3a4656;
+  --accent: #2bb5ac;
+  --accent-hover: #4fd1c7;
+  --button-text: #0b1118;
+  --warning: #ffa94d;
+  --danger: #ff6b6b;
+}
+
+/* 3. Base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: var(--accent);
+}
+
+header h1 {
+  margin: 0;
+  color: var(--button-text);
+}
+
+main {
+  max-width: 600px;
+  margin: 24px auto;
+  padding: 20px;
+  background-color: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--bg);
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+/* 4. Buttons */
+button {
+  background-color: var(--accent);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+header button {
+  background-color: var(--card);
+  color: var(--text);
+}
+
+header button:hover {
+  background-color: var(--bg);
+}
+
+/* 5. Counter classes (over comes last so it wins) */
+.warning {
+  color: var(--warning);
+}
+
+.over {
+  color: var(--danger);
+  font-weight: bold;
+}
